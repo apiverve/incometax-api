@@ -44,7 +44,10 @@ from apiverve_incometaxbrackets.apiClient import IncometaxAPIClient
 # Initialize the client with your APIVerve API key
 api = IncometaxAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "US", "year": 2024 }
+query = {
+    "country": "US",
+    "year": 2024
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "country": "US", "year": 2024 }
+query = {
+    "country": "US",
+    "year": 2024
+}
 ```
 
 ###### Simple Request
@@ -279,7 +285,10 @@ from apiverve_incometaxbrackets.apiClient import IncometaxAPIClient, IncometaxAP
 
 api = IncometaxAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "US", "year": 2024 }
+query = {
+    "country": "US",
+    "year": 2024
+}
 
 try:
     result = api.execute(query)
@@ -300,7 +309,10 @@ from apiverve_incometaxbrackets.apiClient import IncometaxAPIClient, IncometaxAP
 
 api = IncometaxAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "US", "year": 2024 }
+query = {
+    "country": "US",
+    "year": 2024
+}
 
 try:
     result = api.execute(query)
@@ -334,7 +346,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_incometaxbrackets.apiClient import IncometaxAPIClient, IncometaxAPIClientError
 
-query = { "country": "US", "year": 2024 }
+query = {
+    "country": "US",
+    "year": 2024
+}
 
 # Using context manager ensures proper cleanup
 with IncometaxAPIClient("[YOUR_API_KEY]") as api:
@@ -360,7 +375,10 @@ from apiverve_incometaxbrackets.apiClient import IncometaxAPIClient
 # Enable debug mode
 api = IncometaxAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "country": "US", "year": 2024 }
+query = {
+    "country": "US",
+    "year": 2024
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -375,8 +393,12 @@ from apiverve_incometaxbrackets.apiClient import IncometaxAPIClient
 
 api = IncometaxAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "country": "US",
+    "year": 2024
+}
+
 try:
-    query = { "country": "US", "year": 2024 }
     result = api.execute(query)
     print(result)
 finally:
