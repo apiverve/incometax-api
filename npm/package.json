@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/incometax",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Income Tax Brackets is a tool for retrieving US federal income tax bracket data by year. It returns tax rates, income ranges, and standard deductions for all filing statuses.",
   "main": "index.js",
   "types": "index.d.ts",
