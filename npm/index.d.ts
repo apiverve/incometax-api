@@ -4,21 +4,33 @@ declare module '@apiverve/incometax' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface incometaxResponse {
     status: string;
     error: string | null;
     data: IncomeTaxBracketsData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface IncomeTaxBracketsData {
-      year:              number;
-      country:           string;
-      type:              string;
+      year:              number | null;
+      country:           null | string;
+      type:              null | string;
       brackets:          Brackets;
       standardDeduction: StandardDeduction;
-      lastUpdated:       Date;
+      lastUpdated:       Date | null;
   }
   
   interface Brackets {
@@ -29,16 +41,16 @@ declare module '@apiverve/incometax' {
   }
   
   interface HeadOfHousehold {
-      rate: number;
-      min:  number;
-      max:  number;
+      rate: number | null;
+      min:  number | null;
+      max:  number | null;
   }
   
   interface StandardDeduction {
-      single:                  number;
-      marriedFilingJointly:    number;
-      marriedFilingSeparately: number;
-      headOfHousehold:         number;
+      single:                  number | null;
+      marriedFilingJointly:    number | null;
+      marriedFilingSeparately: number | null;
+      headOfHousehold:         number | null;
   }
 
   export default class incometaxWrapper {
