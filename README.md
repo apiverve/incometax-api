@@ -191,11 +191,187 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Income Tax Brackets API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "year": 2025,
+    "country": "US",
+    "type": "federal",
+    "brackets": {
+      "single": [
+        {
+          "rate": 0.1,
+          "min": 0,
+          "max": 11925
+        },
+        {
+          "rate": 0.12,
+          "min": 11926,
+          "max": 48475
+        },
+        {
+          "rate": 0.22,
+          "min": 48476,
+          "max": 103350
+        },
+        {
+          "rate": 0.24,
+          "min": 103351,
+          "max": 197300
+        },
+        {
+          "rate": 0.32,
+          "min": 197301,
+          "max": 250525
+        },
+        {
+          "rate": 0.35,
+          "min": 250526,
+          "max": 626350
+        },
+        {
+          "rate": 0.37,
+          "min": 626351,
+          "max": 999999999
+        }
+      ],
+      "married_filing_jointly": [
+        {
+          "rate": 0.1,
+          "min": 0,
+          "max": 23850
+        },
+        {
+          "rate": 0.12,
+          "min": 23851,
+          "max": 96950
+        },
+        {
+          "rate": 0.22,
+          "min": 96951,
+          "max": 206700
+        },
+        {
+          "rate": 0.24,
+          "min": 206701,
+          "max": 394600
+        },
+        {
+          "rate": 0.32,
+          "min": 394601,
+          "max": 501050
+        },
+        {
+          "rate": 0.35,
+          "min": 501051,
+          "max": 751600
+        },
+        {
+          "rate": 0.37,
+          "min": 751601,
+          "max": 999999999
+        }
+      ],
+      "married_filing_separately": [
+        {
+          "rate": 0.1,
+          "min": 0,
+          "max": 11925
+        },
+        {
+          "rate": 0.12,
+          "min": 11926,
+          "max": 48475
+        },
+        {
+          "rate": 0.22,
+          "min": 48476,
+          "max": 103350
+        },
+        {
+          "rate": 0.24,
+          "min": 103351,
+          "max": 197300
+        },
+        {
+          "rate": 0.32,
+          "min": 197301,
+          "max": 250525
+        },
+        {
+          "rate": 0.35,
+          "min": 250526,
+          "max": 375800
+        },
+        {
+          "rate": 0.37,
+          "min": 375801,
+          "max": 999999999
+        }
+      ],
+      "head_of_household": [
+        {
+          "rate": 0.1,
+          "min": 0,
+          "max": 17000
+        },
+        {
+          "rate": 0.12,
+          "min": 17001,
+          "max": 64850
+        },
+        {
+          "rate": 0.22,
+          "min": 64851,
+          "max": 103350
+        },
+        {
+          "rate": 0.24,
+          "min": 103351,
+          "max": 197300
+        },
+        {
+          "rate": 0.32,
+          "min": 197301,
+          "max": 250500
+        },
+        {
+          "rate": 0.35,
+          "min": 250501,
+          "max": 626350
+        },
+        {
+          "rate": 0.37,
+          "min": 626351,
+          "max": 999999999
+        }
+      ]
+    },
+    "standard_deduction": {
+      "single": 15000,
+      "married_filing_jointly": 30000,
+      "married_filing_separately": 15000,
+      "head_of_household": 22500
+    },
+    "lastUpdated": "2026-02-05T04:00:00.000Z"
+  }
 }
 ```
 
