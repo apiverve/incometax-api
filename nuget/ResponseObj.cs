@@ -25,12 +25,15 @@ namespace APIVerve.API.IncomeTaxBrackets
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("year")]
-        public long Year { get; set; }
+        public long? Year { get; set; }
 
         [JsonProperty("country")]
         public string Country { get; set; }
@@ -45,7 +48,7 @@ namespace APIVerve.API.IncomeTaxBrackets
         public StandardDeduction StandardDeduction { get; set; }
 
         [JsonProperty("lastUpdated")]
-        public DateTimeOffset LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get; set; }
     }
 
     public partial class Brackets
@@ -66,27 +69,39 @@ namespace APIVerve.API.IncomeTaxBrackets
     public partial class HeadOfHousehold
     {
         [JsonProperty("rate")]
-        public double Rate { get; set; }
+        public double? Rate { get; set; }
 
         [JsonProperty("min")]
-        public long Min { get; set; }
+        public long? Min { get; set; }
 
         [JsonProperty("max")]
-        public long Max { get; set; }
+        public long? Max { get; set; }
     }
 
     public partial class StandardDeduction
     {
         [JsonProperty("single")]
-        public long Single { get; set; }
+        public long? Single { get; set; }
 
         [JsonProperty("married_filing_jointly")]
-        public long MarriedFilingJointly { get; set; }
+        public long? MarriedFilingJointly { get; set; }
 
         [JsonProperty("married_filing_separately")]
-        public long MarriedFilingSeparately { get; set; }
+        public long? MarriedFilingSeparately { get; set; }
 
         [JsonProperty("head_of_household")]
-        public long HeadOfHousehold { get; set; }
+        public long? HeadOfHousehold { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
