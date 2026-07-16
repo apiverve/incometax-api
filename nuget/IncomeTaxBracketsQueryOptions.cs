@@ -20,6 +20,6 @@ namespace APIVerve.API.IncomeTaxBrackets
         /// The tax year to retrieve brackets for. Defaults to the previous year.
         /// </summary>
         [JsonProperty("year")]
-        public string Year { get; set; }
+        public int? Year { get; set; }
     }
 }
