@@ -25,28 +25,88 @@ declare module '@apiverve/incometax' {
 
 
   interface IncomeTaxBracketsData {
-      year:              number | null;
-      country:           null | string;
-      type:              null | string;
-      brackets:          Brackets;
-      standardDeduction: StandardDeduction;
-      lastUpdated:       Date | null;
+      year:               number | null;
+      country:            null | string;
+      type:               null | string;
+      brackets:           Brackets;
+      standardDeduction:  StandardDeductionClass;
+      lastUpdated:        Date | null;
+      marriagePenalty:    MarriagePenalty;
+      effectiveRateCurve: EffectiveRateCurve;
+      changes:            Changes;
   }
   
   interface Brackets {
-      single:                  HeadOfHousehold[];
-      marriedFilingJointly:    HeadOfHousehold[];
-      marriedFilingSeparately: HeadOfHousehold[];
-      headOfHousehold:         HeadOfHousehold[];
+      single:                  BracketsHeadOfHousehold[];
+      marriedFilingJointly:    BracketsHeadOfHousehold[];
+      marriedFilingSeparately: BracketsHeadOfHousehold[];
+      headOfHousehold:         BracketsHeadOfHousehold[];
   }
   
-  interface HeadOfHousehold {
+  interface BracketsHeadOfHousehold {
       rate: number | null;
       min:  number | null;
       max:  number | null;
   }
   
+  interface Changes {
+      versusYear:        number | null;
+      indexingPercent:   number | null;
+      bracketShifts:     BracketShifts;
+      standardDeduction: StandardDeduction;
+  }
+  
+  interface BracketShifts {
+      single:                  BracketShiftsHeadOfHousehold[];
+      marriedFilingJointly:    BracketShiftsHeadOfHousehold[];
+      marriedFilingSeparately: BracketShiftsHeadOfHousehold[];
+      headOfHousehold:         BracketShiftsHeadOfHousehold[];
+  }
+  
+  interface BracketShiftsHeadOfHousehold {
+      rate:         number | null;
+      from:         number | null;
+      to:           number | null;
+      shiftPercent: number | null;
+  }
+  
   interface StandardDeduction {
+      single:                  StandardDeductionHeadOfHousehold;
+      marriedFilingJointly:    StandardDeductionHeadOfHousehold;
+      marriedFilingSeparately: StandardDeductionHeadOfHousehold;
+      headOfHousehold:         StandardDeductionHeadOfHousehold;
+  }
+  
+  interface StandardDeductionHeadOfHousehold {
+      from:          number | null;
+      to:            number | null;
+      change:        number | null;
+      changePercent: number | null;
+  }
+  
+  interface EffectiveRateCurve {
+      single:                  EffectiveRateCurveHeadOfHousehold[];
+      marriedFilingJointly:    EffectiveRateCurveHeadOfHousehold[];
+      marriedFilingSeparately: EffectiveRateCurveHeadOfHousehold[];
+      headOfHousehold:         EffectiveRateCurveHeadOfHousehold[];
+  }
+  
+  interface EffectiveRateCurveHeadOfHousehold {
+      income:        number | null;
+      taxableIncome: number | null;
+      tax:           number | null;
+      effectiveRate: number | null;
+      marginalRate:  number | null;
+  }
+  
+  interface MarriagePenalty {
+      appliesFromRate: number | null;
+      singleThreshold: number | null;
+      jointThreshold:  number | null;
+      jointShortfall:  number | null;
+  }
+  
+  interface StandardDeductionClass {
       single:                  number | null;
       marriedFilingJointly:    number | null;
       marriedFilingSeparately: number | null;

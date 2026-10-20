@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/incometax",
-  "version": "1.2.0",
-  "description": "Income Tax Brackets is a tool for retrieving US federal income tax bracket data by year. It returns tax rates, income ranges, and standard deductions for all filing statuses.",
+  "version": "1.2.2",
+  "description": "Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "income tax", "tax brackets", "federal tax", "tax rates", "irs"
+    "income tax api", "tax brackets api", "federal tax bracket api", "tax data api", "income tax brackets"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/incometax-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/incometax?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/incometax?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
