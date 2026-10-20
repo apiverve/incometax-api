@@ -45,28 +45,37 @@ namespace APIVerve.API.IncomeTaxBrackets
         public Brackets Brackets { get; set; }
 
         [JsonProperty("standard_deduction")]
-        public StandardDeduction StandardDeduction { get; set; }
+        public StandardDeductionClass StandardDeduction { get; set; }
 
         [JsonProperty("lastUpdated")]
         public DateTimeOffset? LastUpdated { get; set; }
+
+        [JsonProperty("marriagePenalty")]
+        public MarriagePenalty MarriagePenalty { get; set; }
+
+        [JsonProperty("effectiveRateCurve")]
+        public EffectiveRateCurve EffectiveRateCurve { get; set; }
+
+        [JsonProperty("changes")]
+        public Changes Changes { get; set; }
     }
 
     public partial class Brackets
     {
         [JsonProperty("single")]
-        public HeadOfHousehold[] Single { get; set; }
+        public BracketsHeadOfHousehold[] Single { get; set; }
 
         [JsonProperty("married_filing_jointly")]
-        public HeadOfHousehold[] MarriedFilingJointly { get; set; }
+        public BracketsHeadOfHousehold[] MarriedFilingJointly { get; set; }
 
         [JsonProperty("married_filing_separately")]
-        public HeadOfHousehold[] MarriedFilingSeparately { get; set; }
+        public BracketsHeadOfHousehold[] MarriedFilingSeparately { get; set; }
 
         [JsonProperty("head_of_household")]
-        public HeadOfHousehold[] HeadOfHousehold { get; set; }
+        public BracketsHeadOfHousehold[] HeadOfHousehold { get; set; }
     }
 
-    public partial class HeadOfHousehold
+    public partial class BracketsHeadOfHousehold
     {
         [JsonProperty("rate")]
         public double? Rate { get; set; }
@@ -78,7 +87,130 @@ namespace APIVerve.API.IncomeTaxBrackets
         public long? Max { get; set; }
     }
 
+    public partial class Changes
+    {
+        [JsonProperty("versusYear")]
+        public long? VersusYear { get; set; }
+
+        [JsonProperty("indexingPercent")]
+        public double? IndexingPercent { get; set; }
+
+        [JsonProperty("bracketShifts")]
+        public BracketShifts BracketShifts { get; set; }
+
+        [JsonProperty("standardDeduction")]
+        public StandardDeduction StandardDeduction { get; set; }
+    }
+
+    public partial class BracketShifts
+    {
+        [JsonProperty("single")]
+        public BracketShiftsHeadOfHousehold[] Single { get; set; }
+
+        [JsonProperty("married_filing_jointly")]
+        public BracketShiftsHeadOfHousehold[] MarriedFilingJointly { get; set; }
+
+        [JsonProperty("married_filing_separately")]
+        public BracketShiftsHeadOfHousehold[] MarriedFilingSeparately { get; set; }
+
+        [JsonProperty("head_of_household")]
+        public BracketShiftsHeadOfHousehold[] HeadOfHousehold { get; set; }
+    }
+
+    public partial class BracketShiftsHeadOfHousehold
+    {
+        [JsonProperty("rate")]
+        public double? Rate { get; set; }
+
+        [JsonProperty("from")]
+        public long? From { get; set; }
+
+        [JsonProperty("to")]
+        public long? To { get; set; }
+
+        [JsonProperty("shiftPercent")]
+        public double? ShiftPercent { get; set; }
+    }
+
     public partial class StandardDeduction
+    {
+        [JsonProperty("single")]
+        public StandardDeductionHeadOfHousehold Single { get; set; }
+
+        [JsonProperty("married_filing_jointly")]
+        public StandardDeductionHeadOfHousehold MarriedFilingJointly { get; set; }
+
+        [JsonProperty("married_filing_separately")]
+        public StandardDeductionHeadOfHousehold MarriedFilingSeparately { get; set; }
+
+        [JsonProperty("head_of_household")]
+        public StandardDeductionHeadOfHousehold HeadOfHousehold { get; set; }
+    }
+
+    public partial class StandardDeductionHeadOfHousehold
+    {
+        [JsonProperty("from")]
+        public long? From { get; set; }
+
+        [JsonProperty("to")]
+        public long? To { get; set; }
+
+        [JsonProperty("change")]
+        public long? Change { get; set; }
+
+        [JsonProperty("changePercent")]
+        public double? ChangePercent { get; set; }
+    }
+
+    public partial class EffectiveRateCurve
+    {
+        [JsonProperty("single")]
+        public EffectiveRateCurveHeadOfHousehold[] Single { get; set; }
+
+        [JsonProperty("married_filing_jointly")]
+        public EffectiveRateCurveHeadOfHousehold[] MarriedFilingJointly { get; set; }
+
+        [JsonProperty("married_filing_separately")]
+        public EffectiveRateCurveHeadOfHousehold[] MarriedFilingSeparately { get; set; }
+
+        [JsonProperty("head_of_household")]
+        public EffectiveRateCurveHeadOfHousehold[] HeadOfHousehold { get; set; }
+    }
+
+    public partial class EffectiveRateCurveHeadOfHousehold
+    {
+        [JsonProperty("income")]
+        public long? Income { get; set; }
+
+        [JsonProperty("taxableIncome")]
+        public long? TaxableIncome { get; set; }
+
+        [JsonProperty("tax")]
+        public double? Tax { get; set; }
+
+        [JsonProperty("effectiveRate")]
+        public double? EffectiveRate { get; set; }
+
+        [JsonProperty("marginalRate")]
+        public double? MarginalRate { get; set; }
+    }
+
+    public partial class MarriagePenalty
+    {
+        [JsonProperty("appliesFromRate")]
+        public double? AppliesFromRate { get; set; }
+
+        [JsonProperty("singleThreshold")]
+        public long? SingleThreshold { get; set; }
+
+        [JsonProperty("jointThreshold")]
+        public long? JointThreshold { get; set; }
+
+        [JsonProperty("jointShortfall")]
+        public long? JointShortfall { get; set; }
+    }
+
+    public partial class StandardDeductionClass
     {
         [JsonProperty("single")]
         public long? Single { get; set; }
