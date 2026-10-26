@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/incometax",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000.",
   "main": "index.js",
   "types": "index.d.ts",
