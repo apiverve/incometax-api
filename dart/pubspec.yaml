@@ -1,7 +1,7 @@
 name: apiverve_incometax
-description: Income Tax Brackets is a tool for retrieving US federal income tax bracket data by year. It returns tax rates, income ranges, and standard deductions for all filing statuses.
-version: 1.1.14
-homepage: https://apiverve.com/marketplace/incometax?utm_source=dart&utm_medium=homepage
+description: "Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000."
+version: 1.2.4
+homepage: https://apiverve.com/marketplace/incometax?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/incometax-api/tree/main/dart
 
 environment:

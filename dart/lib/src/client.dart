@@ -46,7 +46,7 @@ final _formatPatterns = {
 
 /// Income Tax Brackets API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/incometax?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/incometax?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [country] (required) - The country code (currently only 'US' is supported) [minLength: 2, maxLength: 2]

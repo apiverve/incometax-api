@@ -1,8 +1,8 @@
 /// Income Tax Brackets API client for Dart/Flutter
 ///
-/// Income Tax Brackets is a tool for retrieving US federal income tax bracket data by year. It returns tax rates, income ranges, and standard deductions for all filing statuses.
+/// Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/incometax?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/incometax?utm_source=dart&utm_medium=referral&utm_content=readme
 library apiverve_incometax;
 
 export 'src/client.dart';
