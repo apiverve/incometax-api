@@ -1,6 +1,6 @@
 name: apiverve_incometax
 description: "Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000."
-version: 1.2.4
+version: 1.2.5
 homepage: https://apiverve.com/marketplace/incometax?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/incometax-api/tree/main/dart
 
