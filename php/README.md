@@ -1,6 +1,6 @@
 # Income Tax Brackets API - PHP Package
 
-Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000.
+Income Tax Brackets retrieves US federal income tax brackets, marginal rates, and standard deductions across all filing statuses, and with state=CA (any state or DC) adds that state's brackets, standard deduction and personal exemption. Paid plans can query specific historical tax years back to 2000.
 
 ## Installation
 
@@ -29,7 +29,8 @@ $client = new Client('YOUR_API_KEY');
 // Make a request
 $response = $client->execute([
     'country' => 'US',
-    'year' => 2024
+    'year' => 2024,
+    'state' => 'CA'
 ]);
 
 // Print the response
@@ -45,7 +46,7 @@ use APIVerve\Incometax\Exceptions\APIException;
 use APIVerve\Incometax\Exceptions\ValidationException;
 
 try {
-    $response = $client->execute(['country' => 'US', 'year' => 2024]);
+    $response = $client->execute(['country' => 'US', 'year' => 2024, 'state' => 'CA']);
     print_r($response['data']);
 } catch (ValidationException $e) {
     echo "Validation error: " . implode(', ', $e->getErrors());

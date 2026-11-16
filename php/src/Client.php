@@ -15,7 +15,7 @@ use APIVerve\Incometax\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['country' => 'US', 'year' => 2024]);
+ * $response = $client->execute(['country' => 'US', 'year' => 2024, 'state' => 'CA']);
  * print_r($response);
  * ```
  *
@@ -35,7 +35,8 @@ class Client
      */
     private const VALIDATION_RULES = [
         'country' => ['type' => 'string', 'required' => true, 'minLength' => 2, 'maxLength' => 2],
-        'year' => ['type' => 'integer', 'required' => false, 'min' => 2000, 'max' => 2030]
+        'year' => ['type' => 'integer', 'required' => false, 'min' => 2000, 'max' => 2030],
+        'state' => ['type' => 'string', 'required' => false]
     ];
 
     /**
