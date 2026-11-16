@@ -51,6 +51,7 @@ final _formatPatterns = {
 /// Parameters:
 /// * [country] (required) - The country code (currently only 'US' is supported) [minLength: 2, maxLength: 2]
 /// * [year] - The tax year to retrieve brackets for. Defaults to the previous year. [min: 2000, max: 2030]
+/// * [state] - Two-letter US state code (or DC) to add that state's income tax brackets, standard deduction and personal exemption. States with no wage income tax return hasIncomeTax false. State tables start at 2023; a later year not yet published uses the latest edition.
 class IncometaxClient {
   final String apiKey;
   final String baseUrl;
@@ -60,6 +61,7 @@ class IncometaxClient {
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'country': ValidationRule(type: 'string', required: true, minLength: 2, maxLength: 2),
     'year': ValidationRule(type: 'integer', required: false, min: 2000, max: 2030),
+    'state': ValidationRule(type: 'string', required: false),
   };
 
   IncometaxClient(this.apiKey, {

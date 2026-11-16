@@ -577,14 +577,17 @@ class IncometaxDataChangesStandarddeductionHeadOfHousehold {
 class IncometaxRequest {
   String country;
   int? year;
+  String? state;
 
   IncometaxRequest({
     required this.country,
     this.year,
+    this.state,
   });
 
   Map<String, dynamic> toJson() => {
       'country': country,
       if (year != null) 'year': year,
+      if (state != null) 'state': state,
     };
 }
