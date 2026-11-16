@@ -16,7 +16,8 @@ const api = new incometaxAPI({
 // Example query
 var query = {
   country: "US",
-  year: 2024
+  year: 2024,
+  state: "CA"
 };
 
 // Make the API request using callback

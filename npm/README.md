@@ -1,6 +1,6 @@
 # Income Tax Brackets API
 
-Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000.
+Income Tax Brackets retrieves US federal income tax brackets, marginal rates, and standard deductions across all filing statuses, and with state=CA (any state or DC) adds that state's brackets, standard deduction and personal exemption. Paid plans can query specific historical tax years back to 2000.
 
 [![npm version](https://img.shields.io/npm/v/@apiverve/incometax.svg)](https://www.npmjs.com/package/@apiverve/incometax)
 
@@ -58,7 +58,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 ```javascript
 var query = {
   country: "US",
-  year: 2024
+  year: 2024,
+  state: "CA"
 };
 
 api.execute(query, function (error, data) {
@@ -79,7 +80,8 @@ You can also use promises to make requests. The API returns a promise that you c
 ```javascript
 var query = {
   country: "US",
-  year: 2024
+  year: 2024,
+  state: "CA"
 };
 
 api.execute(query)
@@ -101,7 +103,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 async function makeRequest() {
     var query = {
   country: "US",
-  year: 2024
+  year: 2024,
+  state: "CA"
 };
 
     try {

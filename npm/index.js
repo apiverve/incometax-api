@@ -30,7 +30,7 @@ class incometaxWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/incometax';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"country":{"type":"string","required":true,"minLength":2,"maxLength":2},"year":{"type":"integer","required":false,"min":2000,"max":2030}};
+        this.validationRules = {"country":{"type":"string","required":true,"minLength":2,"maxLength":2},"year":{"type":"integer","required":false,"min":2000,"max":2030},"state":{"type":"string","required":false}};
     }
 
     /**
