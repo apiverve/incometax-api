@@ -1,7 +1,7 @@
 Income Tax Brackets API
 ============
 
-Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000.
+Income Tax Brackets retrieves US federal income tax brackets, marginal rates, and standard deductions across all filing statuses, and with state=CA (any state or DC) adds that state's brackets, standard deduction and personal exemption. Paid plans can query specific historical tax years back to 2000.
 
 
 [![PyPI version](https://img.shields.io/pypi/v/apiverve-incometaxbrackets.svg)](https://pypi.org/project/apiverve-incometaxbrackets/)
@@ -45,7 +45,8 @@ api = IncometaxAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2024
+    "year": 2024,
+    "state": "CA"
 }
 
 try:
@@ -86,7 +87,8 @@ Using the API client, you can perform requests to the API.
 ```python
 query = {
     "country": "US",
-    "year": 2024
+    "year": 2024,
+    "state": "CA"
 }
 ```
 
@@ -626,7 +628,8 @@ api = IncometaxAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2024
+    "year": 2024,
+    "state": "CA"
 }
 
 try:
@@ -650,7 +653,8 @@ api = IncometaxAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2024
+    "year": 2024,
+    "state": "CA"
 }
 
 try:
@@ -687,7 +691,8 @@ from apiverve_incometaxbrackets.apiClient import IncometaxAPIClient, IncometaxAP
 
 query = {
     "country": "US",
-    "year": 2024
+    "year": 2024,
+    "state": "CA"
 }
 
 # Using context manager ensures proper cleanup
@@ -716,7 +721,8 @@ api = IncometaxAPIClient("[YOUR_API_KEY]", debug=True)
 
 query = {
     "country": "US",
-    "year": 2024
+    "year": 2024,
+    "state": "CA"
 }
 
 # Debug information will be printed to console
@@ -734,7 +740,8 @@ api = IncometaxAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2024
+    "year": 2024,
+    "state": "CA"
 }
 
 try:

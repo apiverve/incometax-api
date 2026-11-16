@@ -25,7 +25,8 @@ class IncometaxAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "country": {"type": "string", "required": True, "minLength": 2, "maxLength": 2},
-        "year": {"type": "integer", "required": False, "min": 2000, "max": 2030}
+        "year": {"type": "integer", "required": False, "min": 2000, "max": 2030},
+        "state": {"type": "string", "required": False}
     }
 
     # Format validation patterns

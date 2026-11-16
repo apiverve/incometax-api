@@ -10,11 +10,11 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_incometaxbrackets',
-    version='1.2.5',
+    version='1.2.6',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
-    description='Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000.',
+    description='Income Tax Brackets retrieves US federal income tax brackets, marginal rates, and standard deductions across all filing statuses, and with state=CA (any state or DC) adds that state's brackets, standard deduction and personal exemption. Paid plans can query specific historical tax years back to 2000.',
     author='APIVerve',
     author_email='hello@apiverve.com',
     url='https://apiverve.com/marketplace/incometax?utm_source=pypi&utm_medium=referral&utm_content=homepage',
