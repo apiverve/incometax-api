@@ -18,7 +18,7 @@ def call_incometax_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;country&#x27;: &#x27;US&#x27;}
+        params &#x3D; {&#x27;country&#x27;: &#x27;US&#x27;, &#x27;state&#x27;: &#x27;CA&#x27;}
 
         headers = {
             'x-api-key': API_KEY

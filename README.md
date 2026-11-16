@@ -1,6 +1,6 @@
 # [Income Tax Brackets API](https://apiverve.com/marketplace/incometax?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000.
+Income Tax Brackets retrieves US federal income tax brackets, marginal rates, and standard deductions across all filing statuses, and with state&#x3D;CA (any state or DC) adds that state&#x27;s brackets, standard deduction and personal exemption. Paid plans can query specific historical tax years back to 2000.
 
 The Income Tax Brackets API provides a simple, reliable way to integrate income tax brackets functionality into your applications. Built for developers who need production-ready income tax brackets capabilities without the complexity of building from scratch.
 
@@ -31,7 +31,8 @@ The Income Tax Brackets API provides a simple, reliable way to integrate income 
 async function callIncomeTaxBracketsAPI() {
     try {
         const params = new URLSearchParams({
-            country: 'US'
+            country: 'US',
+            state: 'CA'
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/incometax?${params}`, {
@@ -54,7 +55,7 @@ callIncomeTaxBracketsAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/incometax?country=US" \
+curl -X GET "https://api.apiverve.com/v1/incometax?country=US&state=CA" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
