@@ -1,7 +1,7 @@
 Income Tax Brackets API
 ============
 
-Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000.
+Income Tax Brackets retrieves US federal income tax brackets, marginal rates, and standard deductions across all filing statuses, and with state=CA (any state or DC) adds that state's brackets, standard deduction and personal exemption. Paid plans can query specific historical tax years back to 2000.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.IncomeTaxBrackets.svg)](https://www.nuget.org/packages/APIVerve.API.IncomeTaxBrackets)
@@ -61,7 +61,8 @@ class Program
 
         var queryOptions = new IncomeTaxBracketsQueryOptions {
             Country = "US",
-            Year = 2024
+            Year = 2024,
+            State = "CA"
         };
 
         // Make the API call
@@ -126,7 +127,8 @@ public class Example
 
         var queryOptions = new IncomeTaxBracketsQueryOptions {
             Country = "US",
-            Year = 2024
+            Year = 2024,
+            State = "CA"
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -159,7 +161,8 @@ public class Example
 
         var queryOptions = new IncomeTaxBracketsQueryOptions {
             Country = "US",
-            Year = 2024
+            Year = 2024,
+            State = "CA"
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -197,7 +200,8 @@ public class Example
 
         var queryOptions = new IncomeTaxBracketsQueryOptions {
             Country = "US",
-            Year = 2024
+            Year = 2024,
+            State = "CA"
         };
 
         try
@@ -254,7 +258,8 @@ public class Example
 
         var queryOptions = new IncomeTaxBracketsQueryOptions {
             Country = "US",
-            Year = 2024
+            Year = 2024,
+            State = "CA"
         };
 
         try
@@ -296,7 +301,8 @@ apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new IncomeTaxBracketsQueryOptions {
     Country = "US",
-    Year = 2024
+    Year = 2024,
+    State = "CA"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -323,7 +329,8 @@ apiClient.SetLogger(message =>
 
 var queryOptions = new IncomeTaxBracketsQueryOptions {
     Country = "US",
-    Year = 2024
+    Year = 2024,
+    State = "CA"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -342,7 +349,8 @@ apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (defau
 
 var queryOptions = new IncomeTaxBracketsQueryOptions {
     Country = "US",
-    Year = 2024
+    Year = 2024,
+    State = "CA"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -355,7 +363,8 @@ The API client implements `IDisposable` for proper resource cleanup:
 ```csharp
 var queryOptions = new IncomeTaxBracketsQueryOptions {
     Country = "US",
-    Year = 2024
+    Year = 2024,
+    State = "CA"
 };
 
 using (var apiClient = new IncomeTaxBracketsAPIClient("[YOUR_API_KEY]"))

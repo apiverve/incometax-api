@@ -21,5 +21,11 @@ namespace APIVerve.API.IncomeTaxBrackets
         /// </summary>
         [JsonProperty("year")]
         public int? Year { get; set; }
+
+        /// <summary>
+        /// Two-letter US state code (or DC) to add that state's income tax brackets, standard deduction and personal exemption. States with no wage income tax return hasIncomeTax false. State tables start at 2023; a later year not yet published uses the latest edition.
+        /// </summary>
+        [JsonProperty("state")]
+        public string State { get; set; }
     }
 }
