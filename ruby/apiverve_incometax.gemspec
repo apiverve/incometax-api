@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "apiverve_incometax"
-  spec.version       = "1.2.5"
+  spec.version       = "1.2.6"
   spec.authors       = ["APIVerve"]
   spec.email         = ["hello@apiverve.com"]
 
   spec.summary       = "Income Tax Brackets API - Ruby Client"
-  spec.description   = "Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000."
+  spec.description   = "Income Tax Brackets retrieves US federal income tax brackets, marginal rates, and standard deductions across all filing statuses, and with state=CA (any state or DC) adds that state's brackets, standard deduction and personal exemption. Paid plans can query specific historical tax years back to 2000."
   spec.homepage      = "https://apiverve.com/marketplace/incometax?utm_source=ruby&utm_medium=referral&utm_content=homepage"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.7.0"

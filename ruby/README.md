@@ -1,6 +1,6 @@
 # Income Tax Brackets API - Ruby Gem
 
-Income Tax Brackets retrieves federal income tax brackets, marginal rates, and standard deductions across all US filing statuses. Paid plans can query specific historical tax years back to 2000.
+Income Tax Brackets retrieves US federal income tax brackets, marginal rates, and standard deductions across all filing statuses, and with state=CA (any state or DC) adds that state's brackets, standard deduction and personal exemption. Paid plans can query specific historical tax years back to 2000.
 
 ## Installation
 
@@ -37,7 +37,8 @@ client = APIVerve::Incometax::Client.new(api_key: "YOUR_API_KEY")
 # Make a request
 response = client.execute({
   country: "US",
-  year: 2024
+  year: 2024,
+  state: "CA"
 })
 
 # Print the response
@@ -49,7 +50,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ country: "US", year: 2024 })
+  response = client.execute({ country: "US", year: 2024, state: "CA" })
   puts response["data"]
 rescue APIVerve::Incometax::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"
